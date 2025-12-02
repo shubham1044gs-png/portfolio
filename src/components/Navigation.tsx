@@ -10,17 +10,17 @@ const Navigation = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" }
+    { id: "contact", label: "Contact" },
   ];
 
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.id);
+      const sections = navItems.map((item) => item.id);
       const scrollPosition = window.scrollY + 100;
 
       for (const sectionId of sections) {
@@ -28,8 +28,11 @@ const Navigation = () => {
         if (element) {
           const offsetTop = element.offsetTop;
           const height = element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
+
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + height
+          ) {
             setActiveSection(sectionId);
             break;
           }
@@ -37,8 +40,8 @@ const Navigation = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -46,11 +49,17 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <button 
-            onClick={() => scrollToSection('home')}
-            className="text-xl font-bold bg-text-gradient bg-clip-text text-transparent hover:scale-105 transition-transform duration-200"
+          <button
+            onClick={() => scrollToSection("home")}
+            className="flex items-center text-xl font-bold bg-text-gradient bg-clip-text text-transparent hover:scale-105 transition-transform duration-200"
+            aria-label="Go to home"
           >
-            Shubham Kumar
+            <img
+              src="/favicon.ico"
+              alt="logo"
+              className="h-8 w-8 mr-3 rounded-sm"
+            />
+            <span>Shubham Kumar</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -61,9 +70,9 @@ const Navigation = () => {
                 variant="ghost"
                 onClick={() => scrollToSection(item.id)}
                 className={`relative hover:bg-primary/10 transition-all duration-200 ${
-                  activeSection === item.id 
-                    ? 'text-primary' 
-                    : 'text-muted-foreground hover:text-foreground'
+                  activeSection === item.id
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.label}
@@ -95,9 +104,9 @@ const Navigation = () => {
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
                   className={`w-full justify-start ${
-                    activeSection === item.id 
-                      ? 'text-primary bg-primary/10' 
-                      : 'text-muted-foreground'
+                    activeSection === item.id
+                      ? "text-primary bg-primary/10"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {item.label}

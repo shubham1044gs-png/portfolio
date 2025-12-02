@@ -5,22 +5,22 @@ const About = () => {
   const skills = [
     {
       category: "Frontend",
-      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"],
+      technologies: ["React", "TypeScript", "Java Script", "Tailwind CSS"],
       icon: <Palette className="h-6 w-6" />
     },
     {
       category: "Backend",
-      technologies: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB"],
+      technologies: ["Node.js", "Express", "MySQL"],
       icon: <Code className="h-6 w-6" />
     },
     {
       category: "Tools & Others",
-      technologies: ["Git", "Docker", "AWS", "Figma", "Jest"],
+      technologies: ["Git", "GitHub", "VsCode"],
       icon: <Rocket className="h-6 w-6" />
     },
     {
       category: "Soft Skills",
-      technologies: ["Leadership", "Communication", "Problem Solving", "Team Work"],
+      technologies: ["Leadership", "Problem Solving", "Team Work"],
       icon: <Users className="h-6 w-6" />
     }
   ];
@@ -59,11 +59,11 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="text-muted-foreground">Experience</span>
-                <span className="font-semibold">3+ Years</span>
+                <span className="font-semibold">1+ Years</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-muted-foreground">Projects Completed</span>
-                <span className="font-semibold">25+</span>
+                <span className="font-semibold">4+</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-muted-foreground">Current Focus</span>
